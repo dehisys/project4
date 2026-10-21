@@ -1,0 +1,214 @@
+/* стили для моего сайта-справочника
+   цвета подбирал сам: фон светло-фиолетовый, блоки белые */
+
+/* общие настройки: убираю отступы браузера и задаю шрифт */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f0fa;   /* светло-фиолетовый фон страницы */
+  color: #333333;               /* тёмно-серый цвет текста */
+  line-height: 1.5;
+}
+
+/* плавная прокрутка при клике по пунктам меню */
+html {
+  scroll-behavior: smooth;
+}
+
+/* общий контейнер, чтобы текст не растягивался на весь экран */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* ========================= ШАПКА ========================= */
+
+.header {
+  background-color: #ffffff;
+  border-bottom: 2px solid #d5c7ec;
+  position: sticky;    /* шапка остаётся видна при прокрутке страницы */
+  top: 0;
+}
+
+.header-inner {
+  display: flex;               /* логотип и меню в одну строку */
+  flex-wrap: wrap;             /* на телефоне переносится на новую строку */
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 15px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #7b5ba6;
+}
+
+.logo span {
+  font-size: 13px;
+  font-weight: normal;
+  color: #999999;
+}
+
+/* меню с кнопками-ссылками */
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.nav a {
+  color: #7b5ba6;
+  text-decoration: none;
+  padding: 6px 12px;
+  border: 1px solid #d5c7ec;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.nav a:hover {
+  background-color: #7b5ba6;
+  color: #ffffff;
+}
+
+/* ========================= РАЗДЕЛЫ ========================= */
+
+main {
+  padding: 20px 0 30px;
+}
+
+/* каждый раздел — белый блок с тонкой рамкой */
+section {
+  background-color: #ffffff;
+  border: 1px solid #e2d9f0;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  scroll-margin-top: 85px;   /* чтобы заголовок не прятался под шапкой */
+}
+
+h1 {
+  font-size: 24px;
+  color: #7b5ba6;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 20px;
+  color: #7b5ba6;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 17px;
+  color: #7b5ba6;
+  margin: 18px 0 8px;
+}
+
+p {
+  margin-bottom: 8px;
+}
+
+/* списки с отступом слева */
+ul, ol {
+  margin: 0 0 10px 20px;
+}
+
+/* ========================= ТАБЛИЦЫ ========================= */
+
+/* обёртка нужна, чтобы на телефоне таблицу можно было листать */
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+th, td {
+  border: 1px solid #d5c7ec;
+  padding: 5px 10px;
+  text-align: center;
+  font-size: 14px;
+}
+
+th {
+  background-color: #ece3f7;
+  color: #7b5ba6;
+}
+
+/* ========================= КАРТОЧКИ-ССЫЛКИ ========================= */
+
+.links {
+  display: grid;                 /* сетка из карточек */
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.link {
+  border: 1px solid #d5c7ec;
+  border-radius: 6px;
+  padding: 12px;
+  text-decoration: none;         /* убираю подчёркивание ссылки */
+  color: #333333;
+}
+
+.link:hover {
+  background-color: #ece3f7;
+}
+
+.link b {
+  color: #7b5ba6;
+  display: block;
+  margin-bottom: 3px;
+}
+
+.link span {
+  font-size: 13px;
+  color: #666666;
+}
+
+/* маленькие серые пояснения под таблицами и блоками */
+.note {
+  font-size: 13px;
+  color: #777777;
+  margin-top: 6px;
+}
+
+/* ========================= ПОДВАЛ ========================= */
+
+.footer {
+  background-color: #ffffff;
+  border-top: 2px solid #d5c7ec;
+  text-align: center;
+  padding: 15px;
+  color: #777777;
+  font-size: 13px;
+}
+
+/* ========================= ТЕЛЕФОНЫ ========================= */
+
+@media (max-width: 600px) {
+  .header-inner {
+    justify-content: center;
+    text-align: center;
+  }
+  .nav {
+    justify-content: center;
+  }
+  h1 {
+    font-size: 20px;
+  }
+}
